@@ -28,6 +28,7 @@ public class RouteGenerator implements Runnable {
         }
         synchronized (sizeToFreq) {
             sizeToFreq.put(max, (sizeToFreq.get(max) == null ? 1 : sizeToFreq.get(max) + 1));
+            sizeToFreq.notify();
         }
     }
 }
